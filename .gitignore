@@ -2,9 +2,7 @@
 /*
 
 # Add only certain directories
-!.config/nvim/
-!.config/kitty/
-
+!.config
 !.i3/
 !.tmux/
 
