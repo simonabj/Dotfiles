@@ -1,1 +1,17 @@
+# Ignore all files in /home by default
 /*
+
+# Add only certain directories
+!.config/nvim/
+!.config/kitty/
+
+!.i3/
+!.tmux/
+
+# Add specific config files
+!.zshrc
+!.tmux.conf
+
+# Add .local scripts
+!.local/bin/tmux-*
+
