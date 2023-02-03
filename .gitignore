@@ -5,6 +5,7 @@
 !.config
 !.i3/
 !.tmux/
+!/texmf/
 
 # Add specific config files
 !.zshrc

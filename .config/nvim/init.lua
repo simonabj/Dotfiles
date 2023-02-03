@@ -45,18 +45,30 @@ require('packer').startup(function(use)
     after = 'nvim-treesitter',
   }
 
+  use {
+    "windwp/nvim-autopairs",
+    config = function() require("nvim-autopairs").setup {} end
+  }
+
   -- Git related plugins
   use 'tpope/vim-fugitive'
   use 'tpope/vim-rhubarb'
   use 'lewis6991/gitsigns.nvim'
 
+  -- use {
+  --   'navarasu/onedark.nvim',
+  --   as = 'onedark',
+  --   config = function()
+  --     vim.cmd('colorscheme onedark')
+  --   end
+  -- } -- Theme inspired by Atom
   use {
-    'navarasu/onedark.nvim',
-    as = 'onedark',
+    'shaunsingh/nord.nvim',
+    as = 'nord',
     config = function()
-      vim.cmd('colorscheme onedark')
+      vim.cmd('colorscheme nord')
     end
-  } -- Theme inspired by Atom
+  }
   use 'nvim-lualine/lualine.nvim' -- Fancier statusline
   use 'lukas-reineke/indent-blankline.nvim' -- Add indentation guides even on blank lines
   use 'numToStr/Comment.nvim' -- "gc" to comment visual regions/lines
@@ -106,6 +118,8 @@ require('packer').startup(function(use)
   -- Multi-cursor plugin
   -- use 'mg979/vim-visual-multi'
 
+  use 'lervag/vimtex'
+
   -- LuaSnip for all that snipping
   use({ "L3MON4D3/LuaSnip", tag = "v<CurrentMajor>.*" })
 
@@ -113,22 +127,24 @@ require('packer').startup(function(use)
   use { "derektata/lorem.nvim" }
 
   -- Vim-Slime to pass text to external REPL
-  use 'jpalardy/vim-slime'
+  -- use 'jpalardy/vim-slime'
+  --
+  -- -- Vim-slime extension to better use cells
+  -- use {
+  --   'klafyvel/vim-slime-cells',
+  --   requires = { { 'jpalardy/vim-slime', opt = true } },
+  --   ft = { 'julia' },
+  --   config = function()
+  --     vim.g.slime_target = "tmux"
+  --     -- vim.g.slime_cell_delimiter = "#%%"
+  --     vim.g.slime_default_config = { socket_name = "default", target_pane = "{last}" }
+  --     vim.g.slime_dont_ask_default = 1
+  --     vim.g.slime_bracketed_paste = 1
+  --     vim.g.slime_no_mappings = 1
+  --   end
+  -- }
 
-  -- Vim-slime extension to better use cells
-  use {
-    'klafyvel/vim-slime-cells',
-    requires = { { 'jpalardy/vim-slime', opt = true } },
-    ft = { 'julia' },
-    config = function()
-      vim.g.slime_target = "tmux"
-      -- vim.g.slime_cell_delimiter = "#%%"
-      vim.g.slime_default_config = { socket_name = "default", target_pane = "{last}" }
-      vim.g.slime_dont_ask_default = 1
-      vim.g.slime_bracketed_paste = 1
-      vim.g.slime_no_mappings = 1
-    end
-  }
+  use {'hkupty/iron.nvim'}
 
   -- tpipeline for coherent status bar between nvim and tmux
   use 'vimpostor/vim-tpipeline'
@@ -196,7 +212,7 @@ vim.wo.signcolumn = 'yes'
 
 -- Set colorscheme
 vim.o.termguicolors = true
-vim.cmd [[colorscheme onedark]]
+vim.cmd [[colorscheme nord]]
 
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'

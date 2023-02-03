@@ -9,7 +9,7 @@
 -- 	blue = '#80A7EA',
 -- }
 
-local colors = {
+local onedark_colors = {
 	red = '#cdd6f4',
 	grey = '#181825',
 	-- black = '#282c34',
@@ -21,6 +21,21 @@ local colors = {
 	blue = '#80A7EA',
 	gutter_grey = '4b5263'
 }
+
+local nord_colors = {
+	red = '#bf616a',
+	grey = '#181825',
+	-- black = '#282c34',
+	black = '#3b4252',
+	white = '#eceff4',
+	light_green = '#8fbcbb',
+	orange = '#d08770',
+	green = '#a3be8c',
+	blue = '#88c0d0',
+	gutter_grey = '4b5263'
+}
+
+local colors = nord_colors
 
 local theme = {
 	normal = {
@@ -222,4 +237,4 @@ require('lualine').setup {
 
 }
 
-vim.opt.laststatus = 0
+-- vim.opt.laststatus = 0

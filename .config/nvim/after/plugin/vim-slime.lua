@@ -10,5 +10,5 @@ vim.g.slime_bracketed_paste = 1
 
 -- Open terminal in split
 vim.keymap.set("n", "<leader>ot", "<cmd>silent !tmux split -h<CR>", { silent = true, desc = "[O]pen [T]erminal" })
-
+vim.keymap.set("n", "<leader>lr", "<Plug>SlimeLineSend", { desc = "Slime: Run Line"})
 -- vim.keymap.set("n", "<leader>r", "<Plug>SlimeSendCell")
