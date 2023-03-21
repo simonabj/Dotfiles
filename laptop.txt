@@ -4,3 +4,5 @@
 .config/picom.conf
 .oh-my-zsh
 texmf
+.zshrc
+.Xresources
