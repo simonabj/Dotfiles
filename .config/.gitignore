@@ -1,9 +1,0 @@
-# Ignore all configs...
-/*
-
-# ... except certain config directories
-!kitty/
-!nvim/
-
-# ... or files
-!picom.conf
