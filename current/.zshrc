@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$HOME/.local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -70,7 +70,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -97,17 +97,32 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias ll="logo-ls -al"
+alias ls="logo-ls"
+alias ll="logo-ls -alh"
 alias icat="kitty +kitten icat"
 alias clip="xclip -selection clipboard"
-alias nvimconf="nvim ~/.config/nvim/lua/user/"
-alias polyconf="nvim ~/.config/polybar/config.ini"
+alias nvimconf="cd ~/.config/nvim/ && nvim . && cd -"
 alias aweconf="nvim ~/.config/awesome/rc.lua"
+alias gV24="~/Studie/Gruppelærer/IN3200_V24/" 
+alias psps="kitty --directory . & disown"
+alias mount-uio="sshfs -F $HOME/.ssh/config rennaregla:/uio/hume/student-u82/simonabj /uio"
+# alias julia="~/.local/share/bin/open_julia_remote.sh"
+# alias fcd="cd $(find . -type d \\( -path ./.cache \\) -prune -o -type d -print | fzf)"
+# alias polyconf="nvim ~/.config/polybar/config.ini"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-PATH="/home/simonabj/perl5/bin${PATH:+:${PATH}}"; export PATH;
-PERL5LIB="/home/simonabj/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
-PERL_LOCAL_LIB_ROOT="/home/simonabj/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
-PERL_MB_OPT="--install_base \"/home/simonabj/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/home/simonabj/perl5"; export PERL_MM_OPT;
+export EDITOR=nvim
+export VISUAL=nvim
+
+# neofetch
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+setxkbmap -option caps:escape
+[ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh
+
+# Setup Zoxide
+eval "$(zoxide init --cmd cd zsh)"
