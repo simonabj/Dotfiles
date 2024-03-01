@@ -1,3 +1,4 @@
+#!/bin/bash
 config_list="laptop.txt"
 out_dir="./laptop"
 
